@@ -20,3 +20,51 @@ Migrating to CreateArtists (20150917230241)
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (4.0ms)[0m  DELETE FROM "artists"
+  [1m[36mSQL (1.5ms)[0m  [1mDELETE FROM "paintings"[0m
+  [1m[35mSQL (1.5ms)[0m  DELETE FROM "museums"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "artists" ("name", "nationality", "dob", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Vincent van Gogh"], ["nationality", "Dutch"], ["dob", "1795-02-03"], ["image", "http://cdn.theatlantic.com/static/mt/assets/science/vangogh_photo.jpg"], ["created_at", "2015-09-17 23:20:09.597451"], ["updated_at", "2015-09-17 23:20:09.597451"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "artists" ("name", "nationality", "dob", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Pablo Picasso"], ["nationality", "Spain"], ["dob", "1686-03-05"], ["image", "http://cdn.enjoyourholiday.com/wp-content/uploads/2012/10/Picasso-portrait.jpg"], ["created_at", "2015-09-17 23:20:09.604949"], ["updated_at", "2015-09-17 23:20:09.604949"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "artists" ("name", "nationality", "dob", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Salvador Dali"], ["nationality", "Spain"], ["dob", "1583-09-04"], ["image", "http://www.biography.com/imported/images/Biography/Images/Profiles/D/Salvador-Dali-40389-2-402.jpg"], ["created_at", "2015-09-17 23:20:09.608260"], ["updated_at", "2015-09-17 23:20:09.608260"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "artists" ("name", "nationality", "dob", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Claude Monet"], ["nationality", "French"], ["dob", "1275-09-03"], ["image", "http://www.biography.com/imported/images/Biography/Images/Profiles/M/Claude-Monet-WC-9411771-2-402.jpg"], ["created_at", "2015-09-17 23:20:09.612002"], ["updated_at", "2015-09-17 23:20:09.612002"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "artists" ("name", "nationality", "dob", "image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["name", "Henri Matisse"], ["nationality", "French"], ["dob", "1376-03-08"], ["image", "http://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Portrait_of_Henri_Matisse_1933_May_20.jpg/220px-Portrait_of_Henri_Matisse_1933_May_20.jpg"], ["created_at", "2015-09-17 23:20:09.616010"], ["updated_at", "2015-09-17 23:20:09.616010"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "museums" ("name", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Louvre"], ["city", "Paris"], ["created_at", "2015-09-17 23:20:09.622632"], ["updated_at", "2015-09-17 23:20:09.622632"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "museums" ("name", "city", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Museum of Modern Art (MOMA)"], ["city", "New York"], ["created_at", "2015-09-17 23:20:09.625513"], ["updated_at", "2015-09-17 23:20:09.625513"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "paintings" ("title", "year", "style", "image", "artist_id", "museum_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Self Portrait"], ["year", 1245], ["style", "oil"], ["image", "http://www.artcyclopedia.org/art/van-gogh-self.jpg"], ["artist_id", 1], ["museum_id", 1], ["created_at", "2015-09-17 23:20:09.645164"], ["updated_at", "2015-09-17 23:20:09.645164"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "paintings" ("title", "year", "style", "image", "artist_id", "museum_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["title", "A Woman"], ["year", 1656], ["style", "canvas"], ["image", "http://www.arttherapyblog.com/uimages/2010/10/picasso_woman_b.jpg"], ["artist_id", 3], ["museum_id", 2], ["created_at", "2015-09-17 23:20:09.649672"], ["updated_at", "2015-09-17 23:20:09.649672"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "paintings" ("title", "year", "style", "image", "artist_id", "museum_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Butterfly Ship"], ["year", 1837], ["style", "water colors"], ["image", "http://www.idealnetworker.com/home/idealnet/public.html/wp-content/uploads/2011/04/art-salvador-dali.jpg"], ["artist_id", 1], ["museum_id", 1], ["created_at", "2015-09-17 23:20:09.653770"], ["updated_at", "2015-09-17 23:20:09.653770"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "paintings" ("title", "year", "style", "image", "artist_id", "museum_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Twilight"], ["year", 1488], ["style", "fabric"], ["image", "http://framingpainting.com/UploadPic/Claude%20Monet/big/Venice%20Twilight.jpg"], ["artist_id", 4], ["museum_id", 2], ["created_at", "2015-09-17 23:20:09.657893"], ["updated_at", "2015-09-17 23:20:09.657893"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "paintings" ("title", "year", "style", "image", "artist_id", "museum_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Lydia"], ["year", 1734], ["style", "oil"], ["image", "http://www.arthermitage.org/Henri-Matisse/Portrait-of-Lydia-Delectorskaya.jpg"], ["artist_id", 4], ["museum_id", 1], ["created_at", "2015-09-17 23:20:09.661689"], ["updated_at", "2015-09-17 23:20:09.661689"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36mPainting Load (0.2ms)[0m  [1mSELECT  "paintings".* FROM "paintings"  ORDER BY "paintings"."id" ASC LIMIT 1[0m
+  [1m[35mPainting Load (0.4ms)[0m  SELECT  "paintings".* FROM "paintings"  ORDER BY "paintings"."id" ASC LIMIT 1
+  [1m[36mMuseum Load (0.3ms)[0m  [1mSELECT  "museums".* FROM "museums" WHERE "museums"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPainting Load (0.3ms)[0m  SELECT  "paintings".* FROM "paintings"  ORDER BY "paintings"."id" ASC LIMIT 1
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mPainting Load (0.3ms)[0m  SELECT  "paintings".* FROM "paintings"  ORDER BY "paintings"."id" ASC LIMIT 1
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mMuseum Load (0.2ms)[0m  SELECT "museums".* FROM "museums" INNER JOIN "paintings" ON "museums"."id" = "paintings"."museum_id" WHERE "paintings"."artist_id" = ?  [["artist_id", 1]]
